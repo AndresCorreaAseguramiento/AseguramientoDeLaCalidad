@@ -1,0 +1,898 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+/* Header styles */
+.header {
+    background-color: rgba(36, 48, 110, 1);
+    color: white;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+.header-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0 10px;
+    justify-content: space-between;
+}
+.logo {
+    height: 40px;
+}
+.title {
+    text-align: center;
+    flex-grow: 1;
+    font-size: 40px;
+    margin-left: -50%;
+}
+/* Main container styles */
+.main-container {
+    display: flex;
+    flex: 1;
+    width: 100%;
+    padding-top: 70px; /* Ajuste para evitar superposición del header */
+}
+/* Hamburger menu styles */
+.hamburger-menu {
+    background-color: rgba(36, 48, 110, 1);
+    color: white;
+    min-width: 50px;
+    transition: all 0.3s ease;
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+}
+.menu-icon {
+    display: block;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 24px;
+    background-color: rgba(36, 48, 110, 1);
+    color: white;
+    text-align: left;
+}
+#menu-toggle {
+    display: none;
+}
+#menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+}
+#menu-toggle:checked ~ #menu {
+    display: block;
+    min-width: 200px;
+}
+#menu li {
+    border-top: 1px solid #ddd;
+}
+#menu li a {
+    display: block;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+#menu li a:hover {
+    background-color: rgba(50, 63, 145, 1);
+}
+/* Content styles */
+.content {
+    padding: 20px;
+    flex-grow: 1;
+    margin-left: 20px; /* Espacio inicial reservado para el menú colapsado */
+    transition: margin-left 0.3s ease;
+}
+/* Table styles */
+ /* Contenedor de la tabla con scroll horizontal */
+ .table-container {
+    display: flex; /* Utiliza flexbox para centrar el contenido */
+    justify-content: center; /* Centra horizontalmente */
+    margin-top: 20px; /* Margen superior para separar de otros elementos */
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: center;
+        vertical-align: top; /* Alineación en la parte superior */
+        max-width: 150px; /* Ancho máximo de las celdas */
+        font-size: 12px;
+        word-wrap: break-word; /* Ajuste de texto */
+        white-space: normal; /* Permitir que el texto se ajuste en lugar de desbordarse */
+}
+th {
+    background-color: rgba(36, 48, 110, 1);
+    color: white;
+    font-size: 12px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .header-content {
+        display: flex;
+        flex-direction: column;
+        max-width: 600px; /* Ajusta el ancho máximo si es necesario */
+        margin: 0 auto; /* Centra el formulario horizontalmente */
+    }
+
+    .header-content .logo, .header-content .title {
+        width: 100%;
+        text-align: center;
+    }
+
+    .menu-icon {
+        font-size: 18px;
+    }
+
+    #menu-toggle:checked ~ #menu {
+        min-width: 200px;
+    }
+}
+.register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espacio entre cada grupo de label e input */
+    max-width: 600px; /* Ajusta el ancho máximo del formulario */
+}
+.register-form2 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espacio entre cada grupo de label e input */
+    max-width: 600px; /* Ajusta el ancho máximo del formulario */
+}
+.register-form h2 {
+    margin-bottom: 30px;
+    color: rgba(36, 48, 110, 255);
+    text-align: center;
+}
+.register-form2 h2 {
+    margin-bottom: 30px;
+    color: rgba(36, 48, 110, 255);
+    text-align: center;
+}
+.register-form .form-group {
+    display: flex;
+    align-items: center; /* Alinea verticalmente el label y el input */
+    gap: 20px; /* Espacio entre el label y el input */
+}
+.register-form2 .form-group {
+    display: flex;
+    align-items: center; /* Alinea verticalmente el label y el input */
+    gap: 20px; /* Espacio entre el label y el input */
+}
+.register-form label {
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 0; /* Elimina el margen inferior para una mejor alineación */
+    width: 200px; /* Ajusta el ancho del label si es necesario */
+}
+.register-form2 label {
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 0; /* Elimina el margen inferior para una mejor alineación */
+    width: 200px; /* Ajusta el ancho del label si es necesario */
+}
+.register-form input,
+.register-form textarea {
+    flex: 1; /* Hace que el input ocupe el espacio restante */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box; 
+}
+.register-form2 input,
+.register-form2 textarea {
+    flex: 1; /* Hace que el input ocupe el espacio restante */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box; 
+}
+.register-form textarea {
+    resize: vertical; /* Permite cambiar el tamaño verticalmente */
+    min-height: 100px; /* Ajusta la altura mínima del textarea */
+}
+.register-form2 textarea {
+    resize: vertical; /* Permite cambiar el tamaño verticalmente */
+    min-height: 100px; /* Ajusta la altura mínima del textarea */
+}
+.register-form button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: rgba(36, 48, 110, 255);
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    width: 150px; /* Ajusta el ancho de los botones */
+}
+.register-form2 button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: rgba(36, 48, 110, 255);
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    width: 150px; /* Ajusta el ancho de los botones */
+}
+.register-form button:hover {
+    background-color: #30487b;
+}
+.register-form button:hover {
+    background-color: #30487b;
+}
+.participant-field {
+    padding: 10px;
+    margin: 20px 0;
+    position: relative;
+}
+.remove-participant-btn {
+    position: absolute;
+    top: 28px;
+    right: -485px;
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+#focus-group-header {
+    text-align: left;
+    margin-bottom: 50px;
+}
+#titulo_h1 {
+    text-align: left;
+    margin-bottom: 50px;
+    color: rgba(36, 48, 110, 255); /* Color del título */
+    width: 750px;
+}
+textarea {
+    width: 327px; /* Ocupa el 100% del ancho del contenedor */
+    height: 100px; /* Altura fija para el área de texto */
+    padding: 10px; /* Espacio interno dentro del área de texto */
+    border: 1px solid #ccc; /* Borde gris claro */
+    border-radius: 4px; /* Bordes redondeados */
+    font-size: 16px; /* Tamaño de fuente */
+    font-family: Arial, sans-serif; /* Fuente del texto */
+    resize: vertical; /* Permite redimensionar verticalmente */
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1); /* Sombra interna sutil */
+    margin-bottom: 10px; /* Espacio debajo del textarea */
+}
+textarea:focus {
+    border-color: #007bff; /* Color de borde al enfocar */
+    outline: none; /* Quitar el borde de enfoque por defecto */
+    box-shadow: 0 0 0 2px rgba(38,143,255,0.2); /* Sombra de enfoque */
+}
+.filter-box {
+    background-color: #ffffff; /* Fondo blanco para la sección de filtro */
+    /*border: 1px solid #ddd; /* Borde gris claro */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 20px; /* Espacio interno */
+    width: 80%; /* Ancho del 80% del contenedor */
+    /*max-width: 600px; /* Ancho máximo */
+}
+.filter-box h2 {
+    color: rgba(36, 48, 110, 255); /* Color del título */
+    margin-bottom: 20px; /* Espacio debajo del título */
+    text-align: center; /* Centra el título */
+}
+.filter-box  button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: rgba(36, 48, 110, 255);
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    /*width: 15%; TAMAÑO DE LOS BOTONES GUARDAR - LIMPIAR - ETC */
+    margin-top: 20px;
+}
+.filter-box label {
+    color: #333;
+    width: 300px; /* Ajusta el ancho del label si es necesario */
+    font-weight: bold;
+    margin-bottom: -15px;
+}
+.filter-box button:hover {
+    background-color: #30487b;
+}
+.filter-box input {
+    flex: 1; /* Hace que el input ocupe el espacio restante */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box; 
+    width: 200px;/* Incluye el padding y el borde en el ancho total */
+}
+ /* Estilo opcional para el radio button */
+ input[type="checkbox"] {
+    transform: scale(1.5); /* Cambia el tamaño del radio button si es necesario */
+    text-align: center; /* Centra el radio button dentro de la celda */
+}
+
+.detalleBtn, .reprogramarBtn, .cancelarBtn, .detailsBtn, .confirmarBtn, .feedbackBtn, .detallesBtn, .asignarBtn, #confirmAssignBtn, #addCcBtn, .details-btn, .change-state-btn, .cancel-btn, .confirm-btn {
+    padding: 5px 10px; /* Espaciado interno */
+    background-color: #007bff; /* Color de fondo */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    cursor: pointer; /* Cursor de puntero */
+    border-radius: 4px; /* Bordes redondeados */
+    margin-right: 5px; /* Espacio entre botones */
+    margin-bottom: 5px; /* Espacio inferior */
+    display: inline-block; /* Mostrar como bloque en línea */
+}
+
+.modal {
+    display: none; 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: white; 
+    margin: 15% auto; 
+    padding: 20px; 
+    border: 1px solid #888; 
+    width: 40%;
+}
+
+.modal-content-citas {
+    background-color: white; 
+    margin: 15% auto; 
+    padding: 20px; 
+    border: 1px solid #888; 
+    width: 20%;
+}
+
+.modal-content-responsables {
+    background-color: white; 
+    margin: 15% auto; 
+    padding: 20px; 
+    border: 1px solid #888; 
+    width: 20%;
+}
+
+.modal-content-repro {
+    background-color: white; 
+    margin: 15% auto; 
+    padding: 20px; 
+    border: 1px solid #888; 
+    width: 30%;
+}
+
+.modal-content-cancelar {
+    background-color: white; 
+    margin: 15% auto; 
+    padding: 20px; 
+    border: 1px solid #888; 
+    width: 20%;
+}
+
+.modal-content-estado {
+    background-color: white; 
+    margin: 15% auto; 
+    padding: 20px; 
+    border: 1px solid #888; 
+    width: 20%;
+}
+
+#newState{
+     width: 40%;
+     padding: 8px;
+     border: 1px solid #ddd;
+     border-radius: 4px;
+     background-color: #fff;
+     font-size: 16px;
+     cursor: pointer;
+     appearance: none; /* Remueve la flecha por defecto del navegador */
+     -webkit-appearance: none;
+     -moz-appearance: none;
+     background-image: url('data:image/svg+xml;utf8,<svg fill="black" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>'); /* Agrega una flecha personalizada */
+     background-repeat: no-repeat;
+     background-position: right 10px center;
+     background-size: 16px;
+}
+
+.close{
+    float: right; 
+    font-size: 28px; 
+    cursor: pointer;
+}
+
+#feedbackModal, #reprogramarModal, #assignModal, #detailsModalM, #cancelModal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente */
+    z-index: 1000; /* Asegura que el modal esté por encima de otros elementos */
+}
+#detailsModal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente */
+    z-index: 1000; /* Asegura que el modal esté por encima de otros elementos */
+}
+
+#cancelModal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente */
+    z-index: 1000; /* Asegura que el modal esté por encima de otros elementos */
+}
+
+#detailsModalM {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente */
+    z-index: 1000; /* Asegura que el modal esté por encima de otros elementos */
+}
+
+
+#assignModal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente */
+    z-index: 1000; /* Asegura que el modal esté por encima de otros elementos */
+}
+
+#feedbackModal .modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 20%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 8px; 
+}
+
+#cancelModal .modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 20%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+    border-radius: 8px;
+}
+
+#detailsModalM .modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 20%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 8px;
+}
+
+#assignModal .modal-content {
+    background-color: white;
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 20%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 8px;
+}
+#detailsModal .modal-content {
+    background-color: white;
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 20%; 
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+    border-radius: 8px; 
+}
+#feedbackModal .close {
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer; /* Cursor de mano */
+}
+#detailsModal .close {
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer; /* Cursor de mano */
+}
+#assignModal .close {
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer; /* Cursor de mano */
+}
+#detailsModalM .close {
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer; /* Cursor de mano */
+}
+
+#cancelModal .close {
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer; /* Cursor de mano */
+}
+
+#modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente */
+    z-index: 1000; /* Asegura que el modal esté por encima de otros elementos */
+}
+#modal .modal-content {
+    background-color: white;
+    margin: 15% auto; /* Centrando el modal verticalmente */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 15%; /* Ancho del modal */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); /* Sombra del modal */
+    border-radius: 8px; /* Bordes redondeados */
+}
+#modal .close {
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer; /* Cursor de mano */
+}
+#feedbackFormModal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente */
+    z-index: 1000; /* Asegura que el modal esté por encima de otros elementos */
+}
+#feedbackFormModal .modal-content {
+    background-color: white;
+    margin: 15% auto; /* Centrando el modal verticalmente */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 15%; /* Ancho del modal */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); /* Sombra del modal */
+    border-radius: 8px; /* Bordes redondeados */
+}
+#feedbackFormModal .close {
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer; /* Cursor de mano */
+}
+#confirmFeedbackBtn {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: rgba(36, 48, 110, 255);
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    width: 35%;
+    margin-right: -20px;
+}
+
+#confirmarCancelarBtn{
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: rgba(36, 48, 110, 255);
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    width: 35%;
+    margin-right: -20px;
+}
+
+
+#confirmChangeStateBtn {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: rgba(36, 48, 110, 255);
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    width: 35%;
+    margin-right: -20px;
+}
+
+#confirmCancelBtn {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: rgba(36, 48, 110, 255);
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    width: 35%;
+    margin-right: -20px;
+}
+
+#cerrarBtn {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: rgba(36, 48, 110, 255);
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    width: 35%;
+    margin-right: -20px;
+}
+
+
+#aprobarBtn {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: rgba(36, 48, 110, 255);
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    width: 35%;
+    margin-right: -20px;
+}
+
+#enviarFeedbackBtn {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: rgba(36, 48, 110, 255);
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    width: 35%;
+    margin-right: -20px;
+}
+#guardarReprogramarBtn{
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: rgba(36, 48, 110, 255);
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    width: 20%;
+    margin-right: -20px;
+}
+#closeDetalleBtn{
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: rgba(36, 48, 110, 255);
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    width: 30%;
+    margin-right: -20px;
+}
+#closeDetailsModalBtn {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: rgba(36, 48, 110, 255);
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    width: 35%;
+    margin-right: -20px;
+}
+#closeFeedbackFormBtn {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: rgba(36, 48, 110, 255);
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    width: 35%;
+    margin-right: -20px;
+}
+#closeModalBtn {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: rgba(36, 48, 110, 255);
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    width: 35%;
+    margin: auto;
+}
+/* Oculta el checkbox predeterminado */
+input[type="checkbox"] {
+    appearance: none; /* Oculta la apariencia predeterminada */
+    -webkit-appearance: none; /* Oculta en navegadores WebKit */
+    -moz-appearance: none; /* Oculta en Firefox */
+    width: 20px; /* Ancho del checkbox */
+    height: 20px; /* Alto del checkbox */
+    border: 2px solid #007BFF; /* Borde del checkbox */
+    border-radius: 50%; /* Hace que el checkbox sea redondo */
+    outline: none; /* Sin contorno */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    position: relative; /* Posición relativa para centrar el círculo */
+    background-color: white; /* Color de fondo del checkbox */
+}
+/* Estilo para cuando el checkbox está seleccionado */
+input[type="checkbox"]:checked {
+    background-color: #007BFF; /* Cambia el color de fondo cuando está seleccionado */
+    border-color: #007BFF; /* Cambia el color del borde cuando está seleccionado */
+}
+/* Crea el círculo dentro del checkbox para indicar que está seleccionado */
+input[type="checkbox"]:checked::before {
+    content: ''; /* Contenido vacío */
+    width: 10px; /* Ancho del círculo */
+    height: 10px; /* Alto del círculo */
+    background-color: white; /* Color del círculo */
+    border-radius: 50%; /* Hace que el círculo sea redondo */
+    position: absolute; /* Posición absoluta dentro del checkbox */
+    top: 50%; /* Centra verticalmente */
+    left: 50%; /* Centra horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta la posición del círculo */
+}
+/* Estilo para el select */
+select {
+    width: 15%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    appearance: none; /* Remueve la flecha por defecto del navegador */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="black" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>'); /* Agrega una flecha personalizada */
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px;
+}
+/* SE CREA PARA LOS ESTILOS DE LOS SELECT */
+#ccListContainer, #liderPrincipal select {
+    display: block;
+    margin-bottom: 12px;
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+
+#ccListContainer, #liderPrincipal {
+    display: flex;
+    align-items: center;
+}
+
+#ccListContainer select {
+    flex: 1;
+    margin-right: 8px;
+}
+
+.estado-select {
+    display: flex;
+    align-items: center;
+}
+
+.estado-select select {
+    flex: 1;
+    margin-right: 8px;
+}
+#feedbackEstado select {
+    flex: 1;
+    margin-right: 8px;
+    display: flex;
+    align-items: center;
+}
+
+#feedbackEstado {
+    align-items: center;
+    width: 120px;
+}
+
+#ccContainer {
+    margin-top: 12px;
+}
+
+
+.table-container td select {
+    width: 100%;
+    padding: 6px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+.popup {
+
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #fff;
+        padding: 20px;
+        width: 400px;
+        max-width: 90%;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        border-radius: 8px;
+        z-index: 1000;
+        display: none;
+}
+.popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 300px;
+    text-align: center;
+    position: relative;
+}
+.close-btn {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+}
+.hidden {
+    display: none;
+}

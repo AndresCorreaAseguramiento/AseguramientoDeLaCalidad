@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aseguramiento de la calidad</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <img src="logo-eafit.png" alt="Logo Universidad EAFIT" class="logo">
+            <h1 class="title">Aseguramiento de la calidad</h1>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <nav class="hamburger-menu">
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="menu-icon">&#9776;</label>
+            <ul id="menu">
+                <li><a href="#" onclick="loadPage('formulario-ti')">Formulario Dirección de TI</a></li>
+                <li><a href="#" onclick="loadPage('formulario-proyecto')">Formulario Proyecto</a></li>
+                <li><a href="#" onclick="loadPage('formulario-tickets')">Formulario Tickets</a></li>
+                <li><a href="#" onclick="loadPage('formulario-llamadas')">Formulario Llamadas línea Saul</a></li>
+                <li><a href="#" onclick="loadPage('formulario-focus')">Formulario Focus Group</a></li>
+                <li><a href="#" onclick="loadPage('feedback')">FeedBack</a></li>
+                <li><a href="#" onclick="loadPage('citas-agendadas')">Citas Agendadas</a></li>
+                <li><a href="#" onclick="loadPage('Responsables')">Asignar Responsables</a></li>
+                <li><a href="#" onclick="loadPage('con-Responsable')">Consultar Responsables</a></li>
+                <li><a href="#" onclick="loadPage('MisPlanes')">Mis Planes</a></li>
+                <li><a href="#" onclick="loadPage('revision-plan-accion')">Revisar Plan</a></li>
+                <li><a href="#" onclick="loadPage('planes-en-ejecucion')">Planes en Ejecución</a></li>
+                <li><a href="#" onclick="loadPage('cerrados')">Cerrados</a></li>
+                <li><a href="#" onclick="loadPage('registrar-focus')">Registrar Focus Group</a></li>
+                <li><a href="#" onclick="loadPage('registrar-llamadas')">Registrar Llamadas línea Saul</a></li>
+                <li><a href="#" onclick="loadPage('registrar-plan')">Registrar Plan</a></li>
+            </ul>
+        </nav>
+
+        <main id="content" class="content">
+            <p>Selecciona una opción del menú para comenzar.</p>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
